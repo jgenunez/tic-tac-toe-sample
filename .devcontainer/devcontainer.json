@@ -1,0 +1,29 @@
+{
+  "name": "React App DevContainer",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  //"postCreateCommand": "npm install",
+  "forwardPorts": [3000],
+  "mounts": [
+    "source=/Users/juange/repos/tik-tok,target=/workspace,type=bind"
+  ],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint", // ESLint for linting
+        "esbenp.prettier-vscode"  // Prettier for formatting
+      ],
+      "settings": {
+        "editor.formatOnSave": true,                 // Automatically format files on save
+        "editor.tabSize": 2,                         // Use 2 spaces for indentation
+        "files.exclude": {
+          "**/node_modules": true                    // Hide node_modules folder in the file explorer
+        },
+        "eslint.validate": ["javascript", "typescript", "javascriptreact", "typescriptreact"], // Validate these file types with ESLint
+        "prettier.requireConfig": true              // Ensure a Prettier config file is present
+      }
+    }
+  },
+  "remoteUser": "node"
+}
